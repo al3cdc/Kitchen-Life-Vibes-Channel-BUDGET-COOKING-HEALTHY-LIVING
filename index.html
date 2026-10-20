@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Life Vibes Channel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Shapes -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <!-- Raining Chef Hats Background Elements -->
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+
+  <!-- Header Branding with Blinking SCA 9-3 -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">🍽️</div>
+      <div class="brand-text">
+        <span class="brand-title">KITCHEN LIFE VIBES CHANNEL</span>
+        <span class="brand-subtitle">GROUP 1 ー <span class="blink-text">SCA 9-3</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Landing Section -->
+  <main class="hero-container">
+    <div class="hero-card">
+      <span class="sparkle top-left">+</span>
+      <span class="sparkle top-right">✦</span>
+      <span class="sparkle bottom-left">+</span>
+      <span class="sparkle bottom-right">✦</span>
+
+      <h1>WELCOME TO</h1>
+      <h2 class="hero-subtitle">KITCHEN LIFE VIBES CHANNEL</h2>
+      
+      <!-- Subtitle paragraph starts empty -->
+      <p id="subtitleText"></p>
+      
+      <button class="btn-start" id="getStartedBtn">GET STARTED</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      TLE-LL 9 EG-12 T2 | <strong>Made by: Alec Dela Cruz</strong>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <h3>Enter Details</h3>
+      <p>Tell us a bit about yourself to get started.</p>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="userName">HOW SHOULD WE CALL YOU?</label>
+          <input type="text" id="userName" placeholder="e.g., Alec" required>
+        </div>
+        <button type="submit" class="btn-submit">CONTINUE</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
