@@ -43,7 +43,7 @@
       <h1>WELCOME TO</h1>
       <h2 class="hero-subtitle">KITCHEN LIFE VIBES CHANNEL</h2>
       
-      <!-- Subtitle paragraph starts empty -->
+      <!-- Dynamic Welcome Message Container -->
       <p id="subtitleText"></p>
       
       <button class="btn-start" id="getStartedBtn">GET STARTED</button>
@@ -57,16 +57,60 @@
     </div>
   </footer>
 
-  <!-- Login Modal -->
+  <!-- Onboarding Modal -->
   <div class="modal-overlay" id="loginModal">
     <div class="modal-card">
-      <h3>Enter Details</h3>
-      <p>Tell us a bit about yourself to get started.</p>
+      <h3>Nice to meet you!</h3>
       <form id="loginForm">
+        
+        <!-- 1. Name Input -->
         <div class="input-group">
-          <label for="userName">HOW SHOULD WE CALL YOU?</label>
-          <input type="text" id="userName" placeholder="e.g., Kila" required>
+          <label for="userName">What should we call you?</label>
+          <input type="text" id="userName" placeholder="e.g., Klla" required>
         </div>
+
+        <!-- 2. Experience Level (Radio Buttons) -->
+        <div class="input-group">
+          <label>What's your experience level in the kitchen? <span class="sub-label">(Select one)</span></label>
+          <div class="option-list">
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Beginner" required>
+              <span><strong>Beginner:</strong> "I rarely cook / I'm just getting started."</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Intermediate">
+              <span><strong>Intermediate:</strong> "I can follow basic recipes with ease."</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Advanced">
+              <span><strong>Advanced:</strong> "I'm confident in the kitchen and like to experiment."</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 3. Help Preferences (Checkboxes) -->
+        <div class="input-group">
+          <label>What would you like help with? <span class="sub-label">(Select all that apply)</span></label>
+          <div class="option-list">
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Learning to Cook">
+              <span><strong>Learning to Cook:</strong> Simple, step-by-step guides for beginners</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Eliminating Indecision">
+              <span><strong>Eliminating Indecision:</strong> Quick and easy ideas for every meal</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Eating Healthier">
+              <span><strong>Eating Healthier:</strong> Nutritious, well-balanced meals made simple</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Saving Ingredients">
+              <span><strong>Saving Ingredients:</strong> Smarter ways to waste less food and money</span>
+            </label>
+          </div>
+        </div>
+
         <button type="submit" class="btn-submit">CONTINUE</button>
       </form>
     </div>
