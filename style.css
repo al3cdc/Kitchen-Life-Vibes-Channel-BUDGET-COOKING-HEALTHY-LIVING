@@ -203,7 +203,7 @@ header {
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left; /* Left-aligned welcome message */
 }
 
 .hero-card p:empty {
