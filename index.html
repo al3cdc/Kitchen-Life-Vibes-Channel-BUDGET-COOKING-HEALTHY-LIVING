@@ -29,7 +29,7 @@
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#" data-page="home" class="current">Home</a></li>
+      <li><a href="#" data-page="home" class="nav-item-home current">Home</a></li>
       <li class="has-dropdown" id="foldersItem">
         <a href="#" id="foldersToggle">Contents ▾</a>
         <ul class="dropdown">
@@ -41,11 +41,11 @@
           <li><a href="#recipes">Recipes</a></li>
         </ul>
       </li>
-      <li><a href="#greeting" id="aboutUsBtn">About Us</a></li>
+      <li><a href="#" data-page="aboutus" class="nav-item-aboutus">About Us</a></li>
     </ul>
   </nav>
 
-  <!-- ================= MAIN HOMEPAGE ================= -->
+  <!-- ================= PAGE 1: MAIN HOMEPAGE ================= -->
   <section id="home" class="page active">
     
     <div class="home-hero">
@@ -323,7 +323,7 @@
       </div>
     </main>
 
-    <!-- ================= INTERACTIVE KITCHEN BASICS GENERATOR SECTION ================= -->
+    <!-- INTERACTIVE KITCHEN BASICS GENERATOR SECTION -->
     <div class="generator-section-wrapper">
       <div class="generator-container">
         <h1>🍳 Kitchen Basics</h1>
@@ -345,57 +345,12 @@
 
   </section>
 
-  <!-- Onboarding Modal (Three Questions Section) -->
-  <div class="modal-overlay" id="loginModal">
-    <div class="modal-card">
-      <h3>Nice to meet you!</h3>
-      <form id="loginForm">
-        <div class="input-group">
-          <label for="userName">What should we call you?</label>
-          <input type="text" id="userName" placeholder="e.g., Klla" required>
-        </div>
-        <div class="input-group">
-          <label>What's your experience level in the kitchen? <span class="sub-label">(Select one)</span></label>
-          <div class="option-list">
-            <label class="radio-option">
-              <input type="radio" name="experience" value="Beginner" required>
-              <span><strong>Beginner:</strong> "I rarely cook / I'm just getting started."</span>
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="experience" value="Intermediate">
-              <span><strong>Intermediate:</strong> "I can follow basic recipes with ease."</span>
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="experience" value="Advanced">
-              <span><strong>Advanced:</strong> "I'm confident in the kitchen and like to experiment."</span>
-            </label>
-          </div>
-        </div>
-        <div class="input-group">
-          <label>What would you like help with? <span class="sub-label">(Select all that apply)</span></label>
-          <div class="option-list">
-            <label class="checkbox-option">
-              <input type="checkbox" name="help" value="Learning to Cook">
-              <span><strong>Learning to Cook:</strong> Simple, step-by-step guides for beginners</span>
-            </label>
-            <label class="checkbox-option">
-              <input type="checkbox" name="help" value="Eliminating Indecision">
-              <span><strong>Eliminating Indecision:</strong> Quick and easy ideas for every meal</span>
-            </label>
-            <label class="checkbox-option">
-              <input type="checkbox" name="help" value="Eating Healthier">
-              <span><strong>Eating Healthier:</strong> Nutritious, well-balanced meals made simple</span>
-            </label>
-            <label class="checkbox-option">
-              <input type="checkbox" name="help" value="Saving Ingredients">
-              <span><strong>Saving Ingredients:</strong> Smarter ways to waste less food and money</span>
-            </label>
-          </div>
-        </div>
-        <button type="submit" class="btn-submit">CONTINUE</button>
-      </form>
+  <!-- ================= PAGE 2: BLANK ABOUT US PAGE ================= -->
+  <section id="aboutus" class="page">
+    <div class="blank-about-container">
+      <h1 class="big-about-title">ABOUT US</h1>
     </div>
-  </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
