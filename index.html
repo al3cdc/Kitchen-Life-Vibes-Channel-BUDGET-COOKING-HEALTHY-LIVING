@@ -6,7 +6,7 @@
   <title>Kitchen Life Vibes Channel</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="on-greeting">
+<body>
 
   <!-- Background Decorative Shapes -->
   <div class="bg-shape shape-1"></div>
@@ -29,9 +29,9 @@
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#" data-page="home">Home</a></li>
+      <li><a href="#" data-page="home" class="current">Home</a></li>
       <li class="has-dropdown" id="foldersItem">
-        <a href="#" id="foldersToggle">Folders ▾</a>
+        <a href="#" id="foldersToggle">Contents ▾</a>
         <ul class="dropdown">
           <li><a href="#about">About the Project</a></li>
           <li><a href="#audience">Target Audience</a></li>
@@ -41,71 +41,12 @@
           <li><a href="#recipes">Recipes</a></li>
         </ul>
       </li>
-      <li><a href="#" data-page="greeting">About Us</a></li>
+      <li><a href="#greeting" id="aboutUsBtn">About Us</a></li>
     </ul>
   </nav>
 
-  <!-- ================= PAGE 1: GREETING / ABOUT US ================= -->
-  <section id="greeting" class="page">
-    <header>
-      <div class="brand">
-        <div class="brand-icon">
-          <img src="https://uploads.onecompiler.io/43tjxwqya/44cjykqm3/c40a515d-6734-4cc8-87d5-b2c7b31cc698-Photoroom.png" alt="Logo" class="logo-img">
-        </div>
-        <div class="brand-text">
-          <span class="brand-title">KITCHEN LIFE VIBES CHANNEL</span>
-          <span class="brand-subtitle">GROUP 1 ー <span class="blink-text">SCA 9-3</span></span>
-        </div>
-      </div>
-    </header>
-
-    <main class="hero-container">
-      <!-- INITIAL GET STARTED CARD -->
-      <div class="hero-card" id="startCard">
-        <span class="sparkle top-left">+</span>
-        <span class="sparkle top-right">✦</span>
-        <span class="sparkle bottom-left">+</span>
-        <span class="sparkle bottom-right">✦</span>
-        <h1>WELCOME TO</h1>
-        <h2 class="hero-subtitle">KITCHEN LIFE VIBES CHANNEL</h2>
-        <button class="btn-start" id="getStartedBtn">GET STARTED</button>
-      </div>
-
-      <!-- PERSONALIZED WELCOME CARD -->
-      <div class="hero-card hidden" id="welcomeCard">
-        <span class="sparkle top-left">+</span>
-        <span class="sparkle top-right">✦</span>
-        <span class="sparkle bottom-left">+</span>
-        <span class="sparkle bottom-right">✦</span>
-        <h1>WELCOME TO</h1>
-        <h2 class="hero-subtitle">KITCHEN LIFE VIBES CHANNEL</h2>
-        
-        <div class="welcome-message-body">
-          <p class="greeting-user-line">Hi <span id="displayName" class="highlight-name">Chef</span>, I'm your go-to virtual kitchen friend!</p>
-          <p class="intro-desc">We make cooking <strong>easy, fun, and affordable</strong>.</p>
-          <ul class="welcome-feature-list">
-            <li><strong>· Learn</strong> simple cooking skills and pro tips.</li>
-            <li><strong>· Shop smart</strong> and spend less on groceries.</li>
-            <li><strong>· Turn basic ingredients</strong> into delicious meals.</li>
-            <li><strong>· Cook creative dishes</strong> without wasting food.</li>
-          </ul>
-          <p class="closing-encourage">Build your confidence in the kitchen and enjoy healthy food every day!</p>
-          <p class="tagline-footer">BUDGET COOKING, HEALTHY LIVING</p>
-        </div>
-
-        <button class="btn-start" id="proceedHomeBtn">PROCEED TO HOMEPAGE</button>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer-left">
-        TLE-LL 9 EG-12 T2 | <strong>Made by: Alec Dela Cruz</strong>
-      </div>
-    </footer>
-  </section>
-
-  <!-- ================= PAGE 2: HOME ================= -->
-  <section id="home" class="page">
+  <!-- ================= MAIN HOMEPAGE ================= -->
+  <section id="home" class="page active">
     
     <div class="home-hero">
       <div class="logo-scene">
@@ -115,8 +56,8 @@
               <path id="ringPath" d="M200,200 m-165,0 a165,165 0 1,1 330,0 a165,165 0 1,1 -330,0"/>
             </defs>
             <circle cx="200" cy="200" r="156" fill="none" stroke="#d32f2f" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
-            <text font-size="20" font-weight="800" fill="#d32f2f" letter-spacing="2">
-              <textPath href="#ringPath" textLength="1030" lengthAdjust="spacing">BUDGET COOKING ✦ HEALTHY LIVING ✦ BUDGET COOKING ✦ HEALTHY LIVING ✦</textPath>
+            <text font-size="18" font-weight="800" fill="#d32f2f" letter-spacing="2">
+              <textPath href="#ringPath" textLength="1030" lengthAdjust="spacing">EASY RECIPES ✦ QUICK MEALS ✦ AFFORDABLE BITES ✦ DELICIOUS EATS ✦</textPath>
             </text>
           </svg>
           <img class="logo-center" src="https://uploads.onecompiler.io/43tjxwqya/44cjykqm3/c40a515d-6734-4cc8-87d5-b2c7b31cc698-Photoroom.png" alt="Kitchen Life Vibes Channel logo">
@@ -139,16 +80,16 @@
           </button>
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
-              <h3>1. Project Title</h3>
+              <h3>Project Title</h3>
               <p><strong>Kitchen Life Vibes Channel</strong> — Budget Cooking, Healthy Living (YouTube Shorts / TikTok / Instagram Reels)</p>
               
-              <h3 style="margin-top: 1.5rem;">2. Chosen Problem</h3>
+              <h3 style="margin-top: 1.5rem;">Chosen Problem</h3>
               <p>Limited practical kitchen skills among Filipino teenagers and young adults (aged 13–25) significantly contribute to their heavy reliance on fast food and ultra-processed products.</p>
               
-              <h3 style="margin-top: 1.5rem;">3. Need Addressed</h3>
+              <h3 style="margin-top: 1.5rem;">Need Addressed</h3>
               <p>Helping beginners overcome low culinary confidence and excessive spending on fast food by teaching simple, accessible meal-prep skills on a tight budget. Our content addresses this need through short, non-intimidating videos featuring basic kitchen tools, minimal ingredients, and clear step-by-step instructions.</p>
               
-              <h3 style="margin-top: 1.5rem;">4. Relevance &amp; Practicality Evaluation</h3>
+              <h3 style="margin-top: 1.5rem;">Relevance &amp; Practicality Evaluation</h3>
               <p><strong>Relevance:</strong> Learning to cook is a basic life skill that gives young people independence, saves money, and encourages healthier eating habits, steering them away from ultra-processed products and fast food deliveries.</p>
               <p style="margin-top: 0.5rem;"><strong>Practicality:</strong> Recipes are realistic, utilizing everyday ingredients from local palengkes or sari-sari stores without requiring expensive appliances like air fryers or blenders.</p>
             </div>
@@ -163,7 +104,7 @@
           </button>
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
-              <h3>5. Target Audience &amp; Needs</h3>
+              <h3>Target Audience &amp; Needs</h3>
               <p><strong>Demographics:</strong> Students and young adults (ages 13–25) with minimal experience, busy daily schedules, and tight allowances who frequently rely on convenience foods.</p>
               <p style="margin-top: 0.8rem;"><strong>Core Goal:</strong> To eat better, save money, and build kitchen confidence.</p>
               
@@ -188,40 +129,28 @@
           </button>
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
-              <h3>6. Research Findings &amp; Reference Videos</h3>
+              <h3>Research Findings &amp; Reference Videos</h3>
               
-              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.15rem;">A. Reference Videos Analyzed</h4>
+              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.15rem;">A. YouTube Videos Analyzed</h4>
               
               <div class="video-card-item">
                 <p><strong>Video 1:</strong> Best 25 Simple Food Recipes to Make at Home — Easy Asian Cooking Collection by Hamimommy</p>
-                <div class="video-container">
-                  <iframe src="https://www.youtube.com/embed/SeaiInbr92k" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top: 1rem; font-size: 1.05rem;"><strong>Analysis:</strong> Adopts a calm, cozy, and aesthetic approach with soft, warm yellow lighting and smooth camera angle shifts (top-down, side views, macro close-ups). It features zero verbal commentary, relying entirely on gentle background music, natural kitchen ASMR sounds, and clear subtitles. Each segment follows a clean structure: a visual intro of the dish, an on-screen ingredient list, step-by-step tips, and a peaceful tasting conclusion. It demonstrates that cooking can feel relaxing rather than stressful.</p>
+                <p style="margin-top: 0.8rem; font-size: 1.05rem;"><strong>Analysis:</strong> Adopts a calm, cozy, and aesthetic approach with soft, warm yellow lighting and smooth camera angle shifts (top-down, side views, macro close-ups). It features zero verbal commentary, relying entirely on gentle background music, natural kitchen ASMR sounds, and clear subtitles.</p>
               </div>
 
               <div class="video-card-item">
                 <p><strong>Video 2:</strong> Rice Cooker Meals on a Student Budget with Abi Marquez</p>
-                <div class="video-container">
-                  <iframe src="https://www.youtube.com/embed/uME9lS7JJzE" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top: 1rem; font-size: 1.05rem;"><strong>Analysis:</strong> Features a professional, bright studio setup with a fixed face-to-camera angle enhanced by sudden zoom-ins on ingredients and actions. Driven by high-energy Taglish verbal commentary filled with personality and relatable student humor, it breaks down ingredient costs, required tools, and cooking temperatures. It highlights the power of single, accessible appliances like rice cookers for dorm and small-space living.</p>
+                <p style="margin-top: 0.8rem; font-size: 1.05rem;"><strong>Analysis:</strong> Features a professional, bright studio setup with a fixed face-to-camera angle enhanced by sudden zoom-ins on ingredients and actions. Driven by high-energy Taglish verbal commentary filled with personality and relatable student humor.</p>
               </div>
 
               <div class="video-card-item">
                 <p><strong>Video 3:</strong> 8 Cooking Recipes for College Students - Easy, Quick, and Affordable</p>
-                <div class="video-container">
-                  <iframe src="https://www.youtube.com/embed/pFgX1jQAKYo" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top: 1rem; font-size: 1.05rem;"><strong>Analysis:</strong> Uses a clean, clutter-free demonstration style focusing directly on the cutting board and cooking station. It relies on clean visual pacing, upbeat background music, and concise on-screen text outlining ingredients and steps without verbal speech. Opening with a rapid preview reel of all dishes, it delivers high informational value and encourages viewers to save the video for meal planning.</p>
+                <p style="margin-top: 0.8rem; font-size: 1.05rem;"><strong>Analysis:</strong> Uses a clean, clutter-free demonstration style focusing directly on the cutting board and cooking station. It relies on clean visual pacing, upbeat background music, and concise on-screen text outlining ingredients and steps without verbal speech.</p>
               </div>
 
               <div class="video-card-item">
                 <p><strong>Video 4:</strong> Meals So Easy A College Student Could Make It</p>
-                <div class="video-container">
-                  <iframe src="https://www.youtube.com/embed/S-TmmjEN-V0" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top: 1rem; font-size: 1.05rem;"><strong>Analysis:</strong> Features dynamic, fast-cut editing with expressive facial reactions, close-up food angles, and playful graphic pop-ups. It uses a humorous, conversational voiceover tailored to student culture, late-night study cravings, and tight budgets. By normalizing messy cooking and potential mistakes, it builds instant trust with absolute beginners.</p>
+                <p style="margin-top: 0.8rem; font-size: 1.05rem;"><strong>Analysis:</strong> Features dynamic, fast-cut editing with expressive facial reactions, close-up food angles, and playful graphic pop-ups. It uses a humorous, conversational voiceover tailored to student culture.</p>
               </div>
 
               <h4 style="margin-top: 2.2rem; color: var(--primary-red); font-size: 1.15rem;">B. Core Research Takeaways for Channel Strategy</h4>
@@ -243,43 +172,26 @@
           </button>
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
-              <h3>7. Content Type &amp; Specifications</h3>
+              <h3>Content Type &amp; Specifications</h3>
               <p><strong>Category:</strong> Short-form practical cooking videos.</p>
               <p style="margin-top: 0.5rem;"><strong>Format &amp; Platform:</strong> YouTube Shorts, TikTok, and Instagram Reels optimized for mobile viewing.</p>
               <p style="margin-top: 0.5rem;"><strong>Duration:</strong> 45 to 120 seconds per clip.</p>
-              <p style="margin-top: 0.5rem;"><strong>Style:</strong> Fast-paced, step-by-step tutorials featuring budget-friendly, beginner-level recipes with vibrant text overlays, ASMR sound effects (crisp, amplified real-life cooking audio), and music.</p>
+              <p style="margin-top: 0.5rem;"><strong>Style:</strong> Fast-paced, step-by-step tutorials featuring budget-friendly, beginner-level recipes with vibrant text overlays, ASMR sound effects, and music.</p>
 
-              <h3 style="margin-top: 1.8rem;">8. Selection Justification</h3>
+              <h3 style="margin-top: 1.8rem;">Selection Justification</h3>
               <p><strong>A. Solves a Real Need:</strong> Teaches essential cooking skills to those relying on expensive delivery.</p>
               <p style="margin-top: 0.5rem;"><strong>B. Cheap &amp; Easy to Produce:</strong> Uses common household tools and low-cost ingredients, keeping startup costs minimal for home filming.</p>
               <p style="margin-top: 0.5rem;"><strong>C. Matches Modern Habits:</strong> Short, snappy formats appeal directly to TikTok and Reels audiences, making learning non-intimidating.</p>
 
-              <h3 style="margin-top: 1.8rem;">9. Project Content &amp; Concept</h3>
+              <h3 style="margin-top: 1.8rem;">Project Content &amp; Concept</h3>
               
               <h4 style="margin-top: 1rem; color: var(--primary-red); font-size: 1.1rem;">A. Communication Style</h4>
               <p style="margin-top: 0.4rem;"><strong>Relatable &amp; Conversational:</strong> Use modern, casual Taglish with student slang and humor about late-night cravings.</p>
-              <p style="margin-top: 0.4rem;"><strong>Encouraging &amp; Non-Judgmental:</strong> Create a safe space for beginners by validating that cooking is intimidating. Celebrate small wins (like chopping an onion or frying an egg) and emphasize that mistakes are part of learning.</p>
-              <p style="margin-top: 0.4rem;"><strong>Visual-First &amp; Fast-Paced:</strong> Use fast cuts, macro close-ups, vibrant text overlays, trending background music, and ASMR sound effects to hook viewers within three seconds.</p>
+              <p style="margin-top: 0.4rem;"><strong>Encouraging &amp; Non-Judgmental:</strong> Create a safe space for beginners by validating that cooking is intimidating.</p>
 
               <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.1rem;">B. Content Focus &amp; Key Solutions</h4>
               <p style="margin-top: 0.4rem;"><strong>Budget-Friendly Dishes:</strong> Quick, delicious meals under ₱100–₱200 per person.</p>
               <p style="margin-top: 0.4rem;"><strong>Kitchen Hacks:</strong> Simple shortcuts for meal prepping, cleaning, storage, and handling leftovers.</p>
-
-              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.1rem;">C. Video Series &amp; Segment Ideas</h4>
-              <ol style="margin-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                <li><strong>Student Budget Classics:</strong> Quick, comforting meals using everyday local ingredients.</li>
-                <li><strong>Kitchen Survival 101:</strong> Essential beginner skills (boiling eggs, cooking rice, knife safety).</li>
-                <li><strong>Palengke Tipid Hacks:</strong> How to shop smart, negotiate respectfully, and pick fresh produce.</li>
-                <li><strong>Kitchen Rescue:</strong> Showing how to save ruined food (like soggy rice or over-salted soup).</li>
-                <li><strong>One Ingredient, Three Ways:</strong> Turning one basic item into three different meals to prevent food waste and maximize savings.</li>
-              </ol>
-
-              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.1rem;">D. Audience Engagement Strategies</h4>
-              <ol style="margin-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                <li>Interactive polls and requests asking viewers what dish or budget limit to try next.</li>
-                <li>User-Generated Content (UGC) sharing viewer attempts, recipe twists, and cooking wins.</li>
-                <li>Saveable quick-recipe cards in comments or pinned posts for fast screenshotting.</li>
-              </ol>
             </div>
           </div>
         </div>
@@ -292,25 +204,15 @@
           </button>
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
-              <h3>10. Technical &amp; Skill Requirements</h3>
+              <h3>Technical &amp; Skill Requirements</h3>
               
               <h4 style="margin-top: 1rem; color: var(--primary-red); font-size: 1.1rem;">Technical Requirements</h4>
-              <p style="margin-top: 0.4rem;"><strong>Equipment:</strong> Cameras, tripods, lighting gear (softboxes/ring lights), microphones (lavalier/shotgun), and reliable cloud storage.</p>
+              <p style="margin-top: 0.4rem;"><strong>Equipment:</strong> Cameras, tripods, lighting gear (softboxes/ring lights), microphones, and reliable cloud storage.</p>
               <p style="margin-top: 0.4rem;"><strong>Software:</strong> Video and audio editing tools like Adobe Premiere Pro, iMovie, Adobe Audition, and GarageBand.</p>
 
-              <h4 style="margin-top: 1.4rem; color: var(--primary-red); font-size: 1.1rem;">Core Culinary Fundamentals</h4>
-              <ul style="margin-left: 1.2rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                <li><strong>Knife Handling:</strong> Sharpening, choosing the right knife, proper positioning, and cutting techniques (dicing, mincing, julienne).</li>
-                <li><strong>Cooking Methods:</strong> Boiling, sautéing, roasting, grilling, and broiling.</li>
-                <li><strong>Baking &amp; Pastry Skills:</strong> Accurate measurements, proper mixing, and temperature control.</li>
-                <li><strong>Plating:</strong> Visual design, color balance, shapes, space, and consistency.</li>
-                <li><strong>Food Safety &amp; Nutrition:</strong> Proper food handling, storage, temperature control, and communicating basic nutritional facts.</li>
-              </ul>
-
-              <h3 style="margin-top: 2rem;">11. Group Development Challenges &amp; Solutions</h3>
+              <h3 style="margin-top: 2rem;">Group Development Challenges &amp; Solutions</h3>
               <p style="margin-top: 0.6rem;"><strong>Equipment &amp; Pacing:</strong> Designing recipes for basic tools while keeping video pacing snappy and accurate to real-world cooking durations.</p>
               <p style="margin-top: 0.6rem;"><strong>Mistakes &amp; Leftovers:</strong> Demonstrating how to fix cooking errors live and repurposing extra ingredients to eliminate food waste.</p>
-              <p style="margin-top: 0.6rem;"><strong>Logistics &amp; Safety:</strong> Managing group filming schedules while distilling complex food safety and storage rules into brief video segments.</p>
             </div>
           </div>
         </div>
