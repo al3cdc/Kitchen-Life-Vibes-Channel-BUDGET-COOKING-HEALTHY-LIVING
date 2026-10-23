@@ -16,8 +16,6 @@ body { font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-
 
 ::selection { background: var(--primary-red); color: #ffffff; }
 
-.hidden { display: none !important; }
-
 /* Background Organic Shapes */
 .bg-shape { position: fixed; border-radius: 50%; filter: blur(70px); z-index: 0; pointer-events: none; }
 .shape-1 { width: 500px; height: 500px; background: rgba(211, 47, 47, 0.08); top: -100px; left: -100px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
@@ -39,37 +37,9 @@ body { font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-
 .floating-item:nth-child(5) { left: 78%; animation-duration: 7.5s; animation-delay: 3s; }
 .floating-item:nth-child(6) { left: 90%; animation-duration: 8.5s; animation-delay: 5s; }
 
-/* ONBOARDING MODAL STYLING (Color Shade & Frame) */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 1000; }
-.modal-overlay.active { opacity: 1; pointer-events: auto; }
-.modal-card { 
-  background: #fff5f5; 
-  border: 2px solid rgba(211, 47, 47, 0.35); 
-  padding: 2.5rem; 
-  border-radius: 24px; 
-  width: 90%; 
-  max-width: 550px; 
-  max-height: 90vh; 
-  overflow-y: auto; 
-  box-shadow: 0 20px 45px rgba(211, 47, 47, 0.2); 
-  color: var(--text-main); 
-}
-.modal-card h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-main); text-align: left; }
-.input-group { margin-bottom: 1.5rem; text-align: left; }
-.input-group label { display: block; font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.6rem; font-weight: 700; }
-.sub-label { font-weight: 400; font-style: italic; color: var(--text-muted); font-size: 0.85rem; }
-.input-group input[type="text"] { width: 100%; padding: 0.9rem 1.2rem; border-radius: 10px; border: 1px solid #ddd; background: #fafafa; color: var(--text-main); font-size: 1rem; outline: none; }
-.input-group input[type="text"]:focus { border-color: var(--primary-red); background: #ffffff; }
-.option-list { display: flex; flex-direction: column; gap: 0.6rem; }
-.radio-option, .checkbox-option { display: flex; align-items: flex-start; gap: 10px; background: #ffffff; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #f0d5d5; cursor: pointer; font-size: 0.9rem; transition: background 0.2s; }
-.radio-option:hover, .checkbox-option:hover { background: #fbebeb; }
-.radio-option input, .checkbox-option input { margin-top: 3px; accent-color: var(--primary-red); }
-.btn-submit { width: 100%; background: var(--primary-red); color: #ffffff; border: none; padding: 1.1rem; border-radius: 10px; font-weight: 800; font-size: 1.1rem; cursor: pointer; margin-top: 1rem; transition: background 0.2s; }
-.btn-submit:hover { background: var(--red-hover); }
-
-/* PAGE SWITCHING */
+/* PAGE SWITCHING LOGIC */
 .page { display: none; position: relative; z-index: 2; }
-.page.active { display: block; min-height: 100vh; }
+.page.active { display: block; min-height: calc(100vh - var(--topbar-h)); }
 
 /* TOP NAVIGATION BAR */
 .topbar { position: sticky; top: 0; z-index: 50; height: var(--topbar-h); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(211, 47, 47, 0.15); box-shadow: 0 4px 16px rgba(211, 47, 47, 0.08); }
@@ -161,6 +131,25 @@ body { font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-
 .generator-container select { width: 100%; max-width: 600px; padding: 14px 18px; margin: 0 auto 1.2rem auto; display: block; border-radius: 12px; border: 1px solid #ddd; font-size: 1.05rem; outline: none; background: #fafafa; color: var(--text-main); }
 .generator-container button { width: 100%; max-width: 600px; background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%); color: #ffffff; border: none; padding: 14px; margin: 0 auto; display: block; border-radius: 12px; font-size: 1.15rem; font-weight: 800; cursor: pointer; box-shadow: 0 6px 16px rgba(211, 47, 47, 0.25); }
 #message { margin-top: 20px; font-size: 1.15rem; font-weight: 600; color: var(--primary-red); line-height: 1.5; }
+
+/* ==========================================================
+   BLANK ABOUT US PAGE STYLING (Big Title Only)
+   ========================================================== */
+.blank-about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--topbar-h));
+  padding: 2rem;
+  text-align: center;
+}
+
+.big-about-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: var(--primary-red);
+  letter-spacing: 4px;
+}
 
 @media (max-width: 900px) {
   .menu-toggle { display: block; }
