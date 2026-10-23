@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Required Console Output Script from Project Specification
+  // Required Console Output Script
   console.log("=== WELCOME MESSAGE ===");
   console.log("Hi everyone! Welcome to Kitchen Life Vibes Channel!");
   console.log("");
@@ -10,17 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("=== PROJECT INTRO ===");
   console.log("This channel shares quick, affordable, and simple recipes - perfect for anyone just starting to cook.");
 
-  const modal = document.getElementById('loginModal');
-  const loginForm = document.getElementById('loginForm');
   const greetingMessage = document.getElementById('greetingMessage');
-  const aboutUsBtn = document.getElementById('aboutUsBtn');
-  
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   const foldersToggle = document.getElementById('foldersToggle');
   const foldersItem = document.getElementById('foldersItem');
 
-  // Load User Name
+  // Load User Name Logic
   function updateUserName() {
     const savedUser = localStorage.getItem('kitchen_vibes_user');
     let userName = "Chef";
@@ -37,37 +33,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateUserName();
 
-  // "About Us" button opens modal
-  if (aboutUsBtn) {
-    aboutUsBtn.addEventListener('click', (e) => {
+  // Page Switch Navigation Logic
+  document.querySelectorAll('[data-page]').forEach(link => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
+      const pageId = link.getAttribute('data-page');
+
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('current'));
+
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.classList.add('active');
+        link.classList.add('current');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      navLinks.classList.remove('open');
     });
-  }
+  });
 
-  // Handle Onboarding Form Submission
-  if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('userName').value.trim();
-      const experience = document.querySelector('input[name="experience"]:checked')?.value || 'Beginner';
-      
-      const helpArray = [];
-      document.querySelectorAll('input[name="help"]:checked').forEach(cb => {
-        helpArray.push(cb.value);
-      });
-
-      const userObj = { name, experience, help: helpArray };
-      localStorage.setItem('kitchen_vibes_user', JSON.stringify(userObj));
-
-      modal.classList.remove('active');
-      updateUserName();
-    });
-  }
-
-  // Dropdown smooth scrolling to accordions
+  // Dropdown Link Accordion Smooth Navigation
   document.querySelectorAll('.dropdown a').forEach(link => {
     link.addEventListener('click', () => {
+      // First ensure home page is active
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('home').classList.add('active');
+      
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('current'));
+      document.querySelector('.nav-item-home').classList.add('current');
+
       const targetId = link.getAttribute('href').substring(1);
       const targetAccordion = document.getElementById(targetId);
       
@@ -79,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile menu toggles
+  // Mobile menu toggle
   menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   foldersToggle.addEventListener('click', (e) => {
     if (window.innerWidth <= 900) {
@@ -96,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Recipe Carousel Logic
+  // Carousel Logic
   const track = document.getElementById('recipeTrack');
   const cards = track ? track.querySelectorAll('.recipe-card') : [];
   const prevBtn = document.getElementById('prevRecipeBtn');
@@ -127,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Kitchen Skills Generator Logic
+  // Interactive Generator Logic
   const learnBtn = document.getElementById("learn");
   if (learnBtn) {
     learnBtn.addEventListener("click", function() {
