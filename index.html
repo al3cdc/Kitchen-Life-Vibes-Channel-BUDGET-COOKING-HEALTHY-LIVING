@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kitchen Life Vibes (KLV) Channel</title>
+  <title>Kitchen Life Vibes Channel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,8 +13,16 @@
   <div class="bg-shape shape-2"></div>
   <div class="bg-shape shape-3"></div>
 
-  <!-- TOP NAVIGATION BAR -->
-  <nav class="topbar" id="topbar">
+  <!-- Raining Chef Hats Background Elements -->
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+  <div class="floating-item">👨‍🍳</div>
+
+  <!-- TOP NAVIGATION BAR (Visible once inside the site) -->
+  <nav class="topbar" id="topbar" style="display: none;">
     <div class="topbar-brand" data-page="home">
       <img src="https://uploads.onecompiler.io/43tjxwqya/44cjykqm3/Kitchen%20Life%20Vibes%20(KLV)%20Channel%20Logo%20102626-Photoroom%20(1).png" alt="Logo">
       <span>KITCHEN LIFE VIBES (KLV)</span>
@@ -37,9 +45,49 @@
     </ul>
   </nav>
 
-  <!-- ================= PAGE 1: MAIN HOMEPAGE ================= -->
-  <section id="home" class="page active">
-    
+  <!-- ================= LANDING / WELCOME PAGE ================= -->
+  <section id="landing" class="page active">
+    <!-- Header Branding with Blinking SCA 9-3 -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">
+          <img src="https://uploads.onecompiler.io/43tjxwqya/44cjykqm3/Kitchen%20Life%20Vibes%20(KLV)%20Channel%20Logo%20102626-Photoroom%20(1).png" alt="Logo" class="logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">KITCHEN LIFE VIBES CHANNEL</span>
+          <span class="brand-subtitle">GROUP 1 ー <span class="blink-text">SCA 9-3</span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Landing Section -->
+    <main class="hero-container">
+      <div class="hero-card">
+        <span class="sparkle top-left">+</span>
+        <span class="sparkle top-right">✦</span>
+        <span class="sparkle bottom-left">+</span>
+        <span class="sparkle bottom-right">✦</span>
+
+        <h1>WELCOME TO</h1>
+        <h2 class="hero-subtitle">KITCHEN LIFE VIBES CHANNEL</h2>
+        
+        <!-- Dynamic Welcome Message Container -->
+        <p id="subtitleText"></p>
+        
+        <button class="btn-start" id="getStartedBtn">GET STARTED</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-left">
+        TLE-LL 9 EG-12 T2 | <strong>Made by: Alec Dela Cruz</strong>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ================= MAIN HOMEPAGE / DOCUMENTATION ================= -->
+  <section id="home" class="page">
     <div class="home-hero">
       <div class="logo-scene">
         <div class="logo-stage">
@@ -76,7 +124,7 @@
               <p><strong>Kitchen Life Vibes (KLV) Channel</strong> — Budget Cooking, Healthy Living (YouTube Shorts / TikTok / Instagram Reels)</p>
               
               <h3 style="margin-top: 1.5rem;">Chosen Problem</h3>
-              <p>Limited practical kitchen skills among Filipino teenagers and young adults (aged 13–25) significantly contribute to their heavy reliance on fast food and ultra-processed products.</p>
+              <p>Limited practical kitchen skills among Filipino teenagers and young adults (aged 13–25) significantly contribute to their heavy reliance on fast food and ultra-processed products[cite: 11].</p>
               
               <h3 style="margin-top: 1.5rem;">Need Addressed</h3>
               <p>Helping beginners overcome low culinary confidence and excessive spending on fast food by teaching simple, accessible meal-prep skills on a tight budget. Our content addresses this need through short, non-intimidating videos featuring basic kitchen tools, minimal ingredients, and clear step-by-step instructions.</p>
@@ -123,7 +171,7 @@
             <div class="content-inner doc-text-block">
               <h3>Research Findings &amp; Reference Videos</h3>
               
-              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.15rem;">A. YouTube Videos Analyzed</h4>
+              <h4 style="margin-top: 1.2rem; color: var(--primary-red); font-size: 1.15rem;">A. YouTube Videos Analyzed[cite: 11]</h4>
               
               <div class="video-card-item">
                 <p><strong>Video 1:</strong> Best 25 Simple Food Recipes to Make at Home — Easy Asian Cooking Collection by Hamimommy</p>
@@ -165,9 +213,9 @@
           <div class="accordion-content">
             <div class="content-inner doc-text-block">
               <h3>Selection Justification</h3>
-              <p><strong>Solves a Real Need:</strong> Teaches essential cooking skills to those relying on fast food and ultra-processed products.</p>
-              <p style="margin-top: 0.5rem;"><strong>Cheap &amp; Easy to Produce:</strong> Uses common household tools and low-cost ingredients, keeping startup costs minimal for home filming.</p>
-              <p style="margin-top: 0.5rem;"><strong>Matches Modern Habits:</strong> Short, snappy formats appeal directly to YouTube Shorts, TikTok, and Reels audiences, making learning non-intimidating.</p>
+              <p><strong>Solves a Real Need:</strong> Teaches essential cooking skills to those relying on fast food and ultra-processed products[cite: 12].</p>
+              <p style="margin-top: 0.5rem;"><strong>Cheap &amp; Easy to Produce:</strong> Uses common household tools and low-cost ingredients, keeping startup costs minimal for home filming[cite: 12].</p>
+              <p style="margin-top: 0.5rem;"><strong>Matches Modern Habits:</strong> Short, snappy formats appeal directly to YouTube Shorts, TikTok, and Reels audiences, making learning non-intimidating[cite: 12].</p>
 
               <h3 style="margin-top: 1.8rem;">Content Type &amp; Specifications</h3>
               <p><strong>Category:</strong> Short-form practical cooking videos.</p>
@@ -176,8 +224,8 @@
               <p style="margin-top: 0.5rem;"><strong>Style:</strong> Fast-paced, step-by-step tutorials featuring budget-friendly, beginner-level recipes with vibrant text overlays, ASMR sound effects, and music.</p>
 
               <h3 style="margin-top: 1.8rem;">Communication Style</h3>
-              <p style="margin-top: 0.4rem;"><strong>Relatable &amp; Conversational:</strong> Use modern, casual Taglish with student slang and humor about late-night cravings.</p>
-              <p style="margin-top: 0.4rem;"><strong>Encouraging &amp; Non-Judgmental:</strong> Create a safe space for beginners by validating that cooking is intimidating.</p>
+              <p style="margin-top: 0.4rem;"><strong>Relatable &amp; Conversational:</strong> Use modern, casual Taglish with student slang and humor about late-night cravings[cite: 12].</p>
+              <p style="margin-top: 0.4rem;"><strong>Encouraging &amp; Non-Judgmental:</strong> Create a safe space for beginners by validating that cooking is intimidating[cite: 12].</p>
 
               <h3 style="margin-top: 1.8rem;">Content Focus &amp; Key Solutions</h3>
               <p style="margin-top: 0.4rem;"><strong>Budget-Friendly Dishes:</strong> Quick, delicious meals under ₱100–₱200 per person.</p>
@@ -185,11 +233,11 @@
 
               <h3 style="margin-top: 1.8rem;">Video Series &amp; Segment Ideas</h3>
               <ul style="margin-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                <li><strong>Student Budget Classics:</strong> Quick, comforting meals using everyday local ingredients.</li>
-                <li><strong>Kitchen Survival 101:</strong> Essential beginner skills (boiling eggs, cooking rice, knife safety).</li>
-                <li><strong>Palengke Tipid Hacks:</strong> How to shop smart, negotiate respectfully, and pick fresh produce.</li>
-                <li><strong>Kitchen Rescue:</strong> Showing how to save ruined food (like soggy rice or over-salted soup).</li>
-                <li><strong>One Ingredient, Three Ways:</strong> Turning one basic item into three different meals to prevent food waste and maximize savings.</li>
+                <li><strong>Student Budget Classics:</strong> Quick, comforting meals using everyday local ingredients[cite: 13].</li>
+                <li><strong>Kitchen Survival 101:</strong> Essential beginner skills (boiling eggs, cooking rice, knife safety)[cite: 13].</li>
+                <li><strong>Palengke Tipid Hacks:</strong> How to shop smart, negotiate respectfully, and pick fresh produce[cite: 13].</li>
+                <li><strong>Kitchen Rescue:</strong> Showing how to save ruined food (like soggy rice or over-salted soup)[cite: 13].</li>
+                <li><strong>One Ingredient, Three Ways:</strong> Turning one basic item into three different meals to prevent food waste and maximize savings[cite: 13].</li>
               </ul>
             </div>
           </div>
@@ -206,13 +254,13 @@
               <h3>Technical &amp; Skills Requirements</h3>
               
               <h4 style="margin-top: 1rem; color: var(--primary-red); font-size: 1.1rem;">Technical Requirements</h4>
-              <p style="margin-top: 0.4rem;"><strong>Equipment:</strong> Cameras, tripods, lighting gear (softboxes/ring lights), microphones (lavalier/shotgun), and reliable cloud storage.</p>
-              <p style="margin-top: 0.4rem;"><strong>Software:</strong> Video and audio editing tools like Adobe Premiere Pro, iMovie, Adobe Audition, and GarageBand.</p>
+              <p style="margin-top: 0.4rem;"><strong>Equipment:</strong> Cameras, tripods, lighting gear (softboxes/ring lights), microphones (lavalier/shotgun), and reliable cloud storage[cite: 13].</p>
+              <p style="margin-top: 0.4rem;"><strong>Software:</strong> Video and audio editing tools like Adobe Premiere Pro, iMovie, Adobe Audition, and GarageBand[cite: 13].</p>
 
               <h4 style="margin-top: 1.4rem; color: var(--primary-red); font-size: 1.1rem;">Essential Culinary Skills</h4>
               <ul style="margin-left: 1.2rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                <li><strong>Knife Handling:</strong> Sharpening, choosing the right knife, proper positioning, and cutting techniques (dicing, mincing, julienne).</li>
-                <li><strong>Cooking Methods:</strong> Boiling, sautéing, roasting, grilling, and broiling.</li>
+                <li><strong>Knife Handling:</strong> Sharpening, choosing the right knife, proper positioning, and cutting techniques (dicing, mincing, julienne)[cite: 13].</li>
+                <li><strong>Cooking Methods:</strong> Boiling, sautéing, roasting, grilling, and broiling[cite: 13].</li>
                 <li><strong>Baking &amp; Pastry Skills:</strong> Accurate measurements, proper mixing, and temperature control.</li>
                 <li><strong>Plating:</strong> Visual design, color balance, shapes, space, and consistency.</li>
                 <li><strong>Food Safety &amp; Nutrition:</strong> Proper food handling, storage, temperature control, and communicating basic nutritional facts.</li>
@@ -355,7 +403,7 @@
     <div class="generator-section-wrapper">
       <div class="generator-container">
         <h1>🍳 Kitchen Basics</h1>
-        <p id="greetingMessage">Hello Gerard! What skill do you want to learn?</p>
+        <p id="generatorGreetingMsg">Hello Gerard! What skill do you want to learn?</p>
 
         <select id="skill">
           <option value="">Choose a skill</option>
@@ -370,10 +418,9 @@
         <div id="message"></div>
       </div>
     </div>
-
   </section>
 
-  <!-- ================= PAGE 2: ABOUT US PAGE ================= -->
+  <!-- ================= ABOUT US PAGE ================= -->
   <section id="aboutus" class="page">
     <div class="about-us-container">
       <div class="about-content-wrapper">
@@ -446,6 +493,61 @@
       </div>
     </div>
   </section>
+
+  <!-- Onboarding Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <h3>Nice to meet you!</h3>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="userName">What should we call you?</label>
+          <input type="text" id="userName" placeholder="e.g., Klla" required>
+        </div>
+
+        <div class="input-group">
+          <label>What's your experience level in the kitchen? <span class="sub-label">(Select one)</span></label>
+          <option-list class="option-list">
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Beginner" required>
+              <span><strong>Beginner:</strong> "I rarely cook / I'm just getting started."</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Intermediate">
+              <span><strong>Intermediate:</strong> "I can follow basic recipes with ease."</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="experience" value="Advanced">
+              <span><strong>Advanced:</strong> "I'm confident in the kitchen and like to experiment."</span>
+            </label>
+          </option-list>
+        </div>
+
+        <div class="input-group">
+          <label>What would you like help with? <span class="sub-label">(Select all that apply)</span></label>
+          <div class="option-list">
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Learning to Cook">
+              <span><strong>Learning to Cook:</strong> Simple, step-by-step guides for beginners</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Eliminating Indecision">
+              <span><strong>Eliminating Indecision:</strong> Quick and easy ideas for every meal</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Eating Healthier">
+              <span><strong>Eating Healthier:</strong> Nutritious, well-balanced meals made simple</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="help" value="Saving Ingredients">
+              <span><strong>Saving Ingredients:</strong> Smarter ways to waste less food and money</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">CONTINUE</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
