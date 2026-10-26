@@ -1,39 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Required Console Output Script
-  console.log("=== WELCOME MESSAGE ===");
-  console.log("Hi everyone! Welcome to Kitchen Life Vibes Channel!");
-  console.log("");
-  console.log("=== AUDIENCE GREETING ===");
-  console.log("So happy to have you join us - let's make cooking fun and simple together!");
-  console.log("SO HAPPY TO HAVE YOU JOIN US - LET'S MAKE COOKING FUN AND SIMPLE TOGETHER!");
-  console.log("");
-  console.log("=== PROJECT INTRO ===");
-  console.log("This channel shares quick, affordable, and simple recipes - perfect for anyone just starting to cook.");
+// Required Console Output Script
+console.log("=== WELCOME MESSAGE ===");
+console.log("Hi everyone! Welcome to Kitchen Life Vibes Channel!");
+console.log("");
+console.log("=== AUDIENCE GREETING ===");
+console.log("So happy to have you join us - let's make cooking fun and simple together!");
+console.log("SO HAPPY TO HAVE YOU JOIN US - LET'S MAKE COOKING FUN AND SIMPLE TOGETHER!");
+console.log("");
+console.log("=== PROJECT INTRO ===");
+console.log("This channel shares quick, affordable, and simple recipes - perfect for anyone just starting to cook.");
 
+function initApp() {
   const getStartedBtn = document.getElementById("getStartedBtn");
   const loginModal = document.getElementById("loginModal");
   const loginForm = document.getElementById("loginForm");
   const subtitleText = document.getElementById("subtitleText");
-  const generatorGreetingMsg = document.getElementById("generatorGreetingMsg");
   const topbar = document.getElementById("topbar");
-
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  const foldersToggle = document.getElementById('foldersToggle');
-  const foldersItem = document.getElementById('foldersItem');
+  const generatorGreetingMsg = document.getElementById("generatorGreetingMsg");
 
   function goToHomepage(name) {
     if (generatorGreetingMsg) {
       generatorGreetingMsg.textContent = `Hello ${name}! What skill do you want to learn?`;
     }
-    document.getElementById("landing").classList.remove("active");
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const homePage = document.getElementById("home");
-    homePage.classList.add("active");
+    if (homePage) homePage.classList.add('active');
     if (topbar) topbar.style.display = "flex";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Render Welcome Message on Landing Page (for first-time setup or review)
   function renderWelcome(name) {
     if (subtitleText) {
       subtitleText.innerHTML = `
@@ -53,61 +47,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (getStartedBtn) {
       getStartedBtn.textContent = "PROCEED TO HOMEPAGE";
+      getStartedBtn.style.display = "inline-block";
       getStartedBtn.onclick = () => {
         goToHomepage(name);
       };
     }
   }
 
-  // AUTO-REDIRECT CHECK: If user already submitted details previously, 
-  // skip the landing page entirely and take them straight to the homepage!
   const savedName = localStorage.getItem("klv_user_name");
   if (savedName) {
     goToHomepage(savedName);
   } else {
-    // Default greeting preview if brand new
-    if (subtitleText) {
-      subtitleText.innerHTML = `
-        Hi <strong>Visitor</strong>, I'm your go-to virtual kitchen friend!
-        <br><br>
-        We make cooking <strong>easy, fun, and affordable</strong>.
-      `;
-    }
+    const landingPage = document.getElementById("landing");
+    if (landingPage) landingPage.classList.add("active");
+    if (topbar) topbar.style.display = "none";
+    if (subtitleText) subtitleText.innerHTML = "";
   }
 
-  // Click "GET STARTED" button
   if (getStartedBtn) {
     getStartedBtn.addEventListener("click", () => {
       const nameCheck = localStorage.getItem("klv_user_name");
-      if (!nameCheck) {
+      if (!nameCheck && loginModal) {
         loginModal.classList.add("active");
       }
     });
   }
 
-  // Form Submission (Onboarding Process)
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const userName = document.getElementById("userName").value.trim();
+      const userNameInput = document.getElementById("userName");
+      const userName = userNameInput ? userNameInput.value.trim() : "Visitor";
+      
       const experienceInput = document.querySelector('input[name="experience"]:checked');
       const experience = experienceInput ? experienceInput.value : "";
 
       const selectedHelp = Array.from(document.querySelectorAll('input[name="help"]:checked'))
                                  .map(cb => cb.value);
 
-      // Save onboarding details permanently
       localStorage.setItem("klv_user_name", userName);
       localStorage.setItem("klv_user_experience", experience);
       localStorage.setItem("klv_user_help", JSON.stringify(selectedHelp));
 
       renderWelcome(userName);
-      loginModal.classList.remove("active");
+      if (loginModal) loginModal.classList.remove("active");
     });
   }
 
-  // Page Switch Navigation Logic (Navbar links)
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const foldersToggle = document.getElementById('foldersToggle');
+  const foldersItem = document.getElementById('foldersItem');
+
   function switchPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('current'));
@@ -117,6 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
       targetPage.classList.add('active');
       const targetNavLink = document.querySelector(`.nav-item-${pageId}`);
       if (targetNavLink) targetNavLink.classList.add('current');
+
+      if (pageId === 'landing') {
+        if (topbar) topbar.style.display = "none";
+      } else {
+        if (topbar) topbar.style.display = "flex";
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     if (navLinks) navLinks.classList.remove('open');
@@ -130,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dropdown Link Accordion Smooth Navigation
   document.querySelectorAll('.dropdown a').forEach(link => {
     link.addEventListener('click', () => {
       switchPage('home');
@@ -143,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile menu toggle
   if (menuToggle) {
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   }
@@ -156,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Accordion Toggle Logic
   document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
       const item = header.parentElement;
@@ -164,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Carousel Logic
   const track = document.getElementById('recipeTrack');
   const cards = track ? track.querySelectorAll('.recipe-card') : [];
   const prevBtn = document.getElementById('prevRecipeBtn');
@@ -195,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Generator Logic
   const learnBtn = document.getElementById("learn");
   if (learnBtn) {
     learnBtn.addEventListener("click", function() {
@@ -216,4 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
       message.textContent = "Kitchen Tip: " + tip;
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
