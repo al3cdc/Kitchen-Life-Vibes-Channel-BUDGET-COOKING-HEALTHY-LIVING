@@ -25,13 +25,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Text Selection Color */
 ::selection {
   background: var(--primary-red);
   color: #ffffff;
 }
 
-/* Background Organic Shapes */
 .bg-shape {
   position: absolute;
   border-radius: 50%;
@@ -66,7 +64,6 @@ body {
   right: 20%;
 }
 
-/* PAGE SWITCHING SYSTEM */
 .page {
   display: none;
   position: relative;
@@ -76,7 +73,6 @@ body {
   display: block;
 }
 
-/* TOP NAVIGATION BAR */
 .topbar { 
   position: sticky; 
   top: 0; 
@@ -111,7 +107,6 @@ body {
   display: block; 
 }
 
-/* Nav links list */
 .nav-links { 
   list-style: none; 
   display: flex; 
@@ -149,28 +144,27 @@ body {
   cursor: pointer; 
 }
 
-/* CONTENTS DROPDOWN */
 .has-dropdown { position: relative; }
 .dropdown { display: none; position: absolute; top: 100%; right: 0; min-width: 250px; list-style: none; padding: 0.5rem; background: #ffffff; border: 1px solid rgba(211, 47, 47, 0.15); border-radius: 16px; box-shadow: 0 16px 32px rgba(211, 47, 47, 0.15); z-index: 60; }
 .dropdown li { width: 100%; text-align: left; }
 .dropdown a { border-radius: 10px; font-weight: 600; display: block; padding: 0.5rem 0.8rem; color: var(--text-main); text-decoration: none; text-align: left; }
 .has-dropdown:hover .dropdown, .has-dropdown.open .dropdown { display: block; }
 
-/* Raining Chef Hats Animation */
 .floating-item {
-  position: absolute;
+  position: fixed;
   font-size: 2.2rem;
   opacity: 0.2;
   z-index: 1;
   pointer-events: none;
   animation: rainAnim 8s linear infinite;
+  top: -10vh;
 }
 
 @keyframes rainAnim {
-  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  0% { transform: translateY(0vh) rotate(0deg); opacity: 0; }
   10% { opacity: 0.25; }
   90% { opacity: 0.25; }
-  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
 .floating-item:nth-child(1) { left: 8%; animation-duration: 7s; animation-delay: 0s; }
@@ -180,7 +174,6 @@ body {
 .floating-item:nth-child(5) { left: 78%; animation-duration: 7.5s; animation-delay: 3s; }
 .floating-item:nth-child(6) { left: 90%; animation-duration: 8.5s; animation-delay: 5s; }
 
-/* Blinking Animation for SCA 9-3 */
 @keyframes blinkEffect {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -192,7 +185,6 @@ body {
   font-weight: 900;
 }
 
-/* Header & Brand Container Layout */
 header {
   padding: 1.5rem 2.5rem;
   display: flex;
@@ -245,7 +237,6 @@ header {
   margin-top: 2px;
 }
 
-/* Hero Container */
 .hero-container {
   flex: 1;
   display: flex;
@@ -308,6 +299,10 @@ header {
   text-align: left;
 }
 
+.hero-card p:empty {
+  margin-bottom: 0;
+}
+
 .btn-start {
   background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
   color: #ffffff;
@@ -328,7 +323,6 @@ header {
   box-shadow: 0 12px 25px rgba(211, 47, 47, 0.4);
 }
 
-/* Footer */
 footer {
   padding: 2rem 4rem;
   display: flex;
@@ -340,7 +334,6 @@ footer {
   z-index: 2;
 }
 
-/* Onboarding Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -349,18 +342,14 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
   z-index: 1000;
 }
 
 .modal-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .modal-card {
@@ -465,7 +454,6 @@ footer {
   background: var(--red-hover);
 }
 
-/* HOME HERO BANNER */
 .home-hero { 
   position: relative; 
   width: 100%;
@@ -495,7 +483,6 @@ footer {
 @keyframes spinRing { to { transform: rotate(360deg); } }
 .logo-center { position: absolute; top: 50%; left: 50%; width: var(--logo-size); height: var(--logo-size); transform: translate(-50%, -50%); object-fit: contain; cursor: pointer; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.7)); transition: transform 0.4s ease; }
 
-/* ACCORDIONS CONTAINER */
 .content-container { max-width: 1150px; margin: 4rem auto; padding: 0 1.5rem; position: relative; z-index: 2; }
 .sections-wrapper { background: var(--card-bg); border: 1px solid rgba(211, 47, 47, 0.15); border-radius: 24px; padding: 3.5rem; box-shadow: 0 15px 35px rgba(211, 47, 47, 0.08); }
 .main-heading { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 0.4rem; letter-spacing: 1px; }
@@ -514,7 +501,6 @@ footer {
 
 .video-card-item { background: #ffffff; border: 1px solid rgba(211, 47, 47, 0.2); border-radius: 20px; padding: 2.2rem; margin-top: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
 
-/* RECIPE CAROUSEL */
 .recipe-carousel-wrapper { position: relative; max-width: 750px; margin: 1.5rem auto 0 auto; }
 .recipe-carousel-container { overflow: hidden; border-radius: 20px; background: #ffffff; border: 1px solid rgba(211, 47, 47, 0.2); box-shadow: 0 10px 30px rgba(211, 47, 47, 0.1); }
 .recipe-track { display: flex; transition: transform 0.4s ease-in-out; }
@@ -531,7 +517,6 @@ footer {
 .indicator-dot { width: 10px; height: 10px; border-radius: 50%; background: #dcdcdc; cursor: pointer; }
 .indicator-dot.active { background: var(--primary-red); width: 25px; border-radius: 6px; }
 
-/* KITCHEN BASICS GENERATOR */
 .generator-section-wrapper { max-width: 1150px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; position: relative; z-index: 2; }
 .generator-container { width: 100%; background: var(--card-bg); border: 1px solid rgba(211, 47, 47, 0.15); padding: 3.5rem; border-radius: 24px; text-align: center; box-shadow: 0 15px 35px rgba(211, 47, 47, 0.08); }
 .generator-container h1 { font-size: 2.2rem; color: var(--text-main); font-weight: 900; margin-bottom: 0.4rem; }
@@ -540,7 +525,6 @@ footer {
 .generator-container button { width: 100%; max-width: 600px; background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%); color: #ffffff; border: none; padding: 14px; margin: 0 auto; display: block; border-radius: 12px; font-size: 1.15rem; font-weight: 800; cursor: pointer; box-shadow: 0 6px 16px rgba(211, 47, 47, 0.25); }
 #message { margin-top: 20px; font-size: 1.15rem; font-weight: 600; color: var(--primary-red); line-height: 1.5; }
 
-/* ABOUT US PAGE STYLING */
 .about-us-container {
   max-width: 900px;
   margin: 4rem auto;
@@ -613,6 +597,15 @@ footer {
   gap: 0.4rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  header { margin-top: 0; margin-left: 0; }
+  .brand-text { margin-left: 0; }
+  footer { padding: 1.5rem 2rem; }
+  .hero-card { padding: 3rem 1.5rem; }
+  .hero-card h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 2rem; }
 }
 
 @media (max-width: 900px) {
