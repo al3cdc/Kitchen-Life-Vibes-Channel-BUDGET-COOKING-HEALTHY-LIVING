@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load User Name Logic
   function updateUserName() {
     const savedUser = localStorage.getItem('kitchen_vibes_user');
-    let userName = "Chef";
+    let userName = "Gerard";
     if (savedUser) {
       const userData = JSON.parse(savedUser);
       if (userData.name) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (greetingMessage) {
-      greetingMessage.textContent = `Hello ${userName}! What Skill do you want to learn?`;
+      greetingMessage.textContent = `Hello ${userName}! What skill do you want to learn?`;
     }
   }
 
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dropdown Link Accordion Smooth Navigation
   document.querySelectorAll('.dropdown a').forEach(link => {
     link.addEventListener('click', () => {
-      // First ensure home page is active
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById('home').classList.add('active');
       
